@@ -1,0 +1,148 @@
+openapi: 3.0.3
+info:
+    title: FilmFusion Public API Client
+    version: 1.0.0
+    description: |-
+        API contract for client-side calls to free public movie/series APIs (e.g., TVmaze, no API key required).
+        This contract describes the expected data shapes and endpoints used by the app.
+servers:
+    - url: https://api.tvmaze.com
+paths:
+    /search:
+        get:
+            summary: Search for movies or series
+            parameters:
+                - in: query
+                  name: q
+                  schema:
+                      type: string
+                  required: true
+                  description: Search term (title, cast, genre, etc.)
+            responses:
+                '200':
+                    description: List of search results
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/MediaSummary'
+    /details/{id}:
+        get:
+            summary: Get details for a movie or series
+            parameters:
+                - in: path
+                  name: id
+                  schema:
+                      type: string
+                  required: true
+                  description: Media ID
+            responses:
+                '200':
+                    description: Media details
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/MediaDetails'
+    /series/{id}/episodes:
+        get:
+            summary: Get episodes for a series
+            parameters:
+                - in: path
+                  name: id
+                  schema:
+                      type: string
+                  required: true
+                  description: Series ID
+            responses:
+                '200':
+                    description: List of episodes grouped by season
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/Episode'
+components:
+    schemas:
+        MediaSummary:
+            type: object
+            properties:
+                id:
+                    type: string
+                title:
+                    type: string
+                image:
+                    type: string
+                year:
+                    type: string
+                mainGenre:
+                    type: string
+                imdbRating:
+                    type: number
+                type:
+                    type: string
+                    enum: [movie, series]
+        MediaDetails:
+            allOf:
+                - $ref: '#/components/schemas/MediaSummary'
+                - type: object
+                  properties:
+                      description:
+                          type: string
+                      releaseDate:
+                          type: string
+                      genres:
+                          type: array
+                          items:
+                              type: string
+                      creators:
+                          type: array
+                          items:
+                              type: string
+                      writers:
+                          type: array
+                          items:
+                              type: string
+                      languages:
+                          type: array
+                          items:
+                              type: string
+                      cast:
+                          type: array
+                          items:
+                              $ref: '#/components/schemas/CastMember'
+                      runtime:
+                          type: number
+                      seasons:
+                          type: number
+                      trailers:
+                          type: array
+                          items:
+                              type: string
+        CastMember:
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                image:
+                    type: string
+                character:
+                    type: string
+        Episode:
+            type: object
+            properties:
+                id:
+                    type: string
+                seasonNumber:
+                    type: integer
+                episodeNumber:
+                    type: integer
+                title:
+                    type: string
+                summary:
+                    type: string
+                imdbRating:
+                    type: number
