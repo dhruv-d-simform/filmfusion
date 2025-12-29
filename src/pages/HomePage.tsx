@@ -13,8 +13,11 @@ export function HomePage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <header className="py-6 bg-primary text-white text-center text-2xl font-bold shadow">
+        <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+            <header className="py-6 bg-neutral-900 text-white text-center text-3xl font-extrabold shadow-lg tracking-tight rounded-b-xl border-b border-border">
+                <span className="inline-block align-middle animate-pulse">
+                    🎬
+                </span>{' '}
                 FilmFusion
             </header>
             <main className="max-w-5xl mx-auto px-4">
@@ -27,8 +30,13 @@ export function HomePage() {
                     error={error}
                 />
                 {!loading && !error && !results.length && (
-                    <div className="text-center py-16 text-gray-400 text-lg">
-                        Start by searching for a movie or series above.
+                    <div className="text-center py-16 text-muted-foreground text-lg select-none">
+                        <span className="text-5xl block mb-4 opacity-60">
+                            🎬
+                        </span>
+                        <span className="font-semibold tracking-tight">
+                            Start by searching for a movie or series above.
+                        </span>
                     </div>
                 )}
                 <Outlet />

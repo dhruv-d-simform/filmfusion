@@ -1,0 +1,40 @@
+/* Hide scrollbar utility for season tabs */
+.hide-scrollbar {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none !important;
+}
+/* Custom scrollbar styles for DetailsModal (all tabs) */
+
+.details-modal-scrollbar, /* for overflow containers */
+.details-modal-scrollbar * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-card);
+}
+
+.details-modal-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: var(--color-card);
+    border-radius: 8px;
+}
+.details-modal-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 60%,
+        var(--color-muted) 100%
+    );
+    border-radius: 8px;
+}
+.details-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 80%,
+        var(--color-muted) 100%
+    );
+}
+.details-modal-scrollbar::-webkit-scrollbar-corner {
+    background: var(--color-card);
+}
