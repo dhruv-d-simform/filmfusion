@@ -21,10 +21,10 @@ export function SearchBar({ onSearch, initialValue = '' }: SearchBarProps) {
             <input
                 type="text"
                 className="flex-1 px-4 py-2 rounded-lg border border-border bg-muted text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 shadow-sm transition"
-                placeholder="Search for movies or series..."
+                placeholder="Search for TV Shows..."
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                aria-label="Search movies or series"
+                aria-label="Search TV Shows"
             />
             <button
                 type="submit"

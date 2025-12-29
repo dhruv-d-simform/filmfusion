@@ -35,7 +35,7 @@ export function HomePage() {
                             🎬
                         </span>
                         <span className="font-semibold tracking-tight">
-                            Start by searching for a movie or series above.
+                            Start by searching for a TV Show.
                         </span>
                     </div>
                 )}
