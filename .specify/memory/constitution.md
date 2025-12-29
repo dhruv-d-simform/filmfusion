@@ -1,50 +1,44 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report (generated 2025-12-29)
+Version change: 0.0.0 → 1.0.0
+Modified principles: All (template → project-specific)
+Added sections: None (template sections filled)
+Removed sections: None
+Templates requiring updates: ✅ plan-template.md, ✅ spec-template.md, ✅ tasks-template.md
+Follow-up TODOs: TODO(RATIFICATION_DATE): original adoption date unknown, confirm and update if available
+-->
+
+# FilmFusion Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Code Quality (NON-NEGOTIABLE)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+All code MUST adhere to strict linting, formatting, and static analysis rules. No code is merged without passing all quality gates.
+Rationale: High code quality ensures maintainability, reduces defects, and enables rapid iteration.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. User Experience Consistency
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+All user-facing components MUST follow the established design system and interaction patterns. Accessibility and usability are first-class requirements.
+Rationale: Consistent user experience builds trust, reduces confusion, and increases adoption.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### III. Performance & Responsiveness
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+The application MUST deliver a snappy, responsive UI. All interactions should complete within 100ms for local actions and 300ms for remote actions (p95). Performance regressions are blocked from release. Profiling and optimization are part of the development lifecycle.
+Rationale: Fast, responsive interfaces are essential for user satisfaction and competitive advantage.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Additional Constraints
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+All dependencies must be actively maintained and security-vetted. Only open-source libraries with OSI-approved licenses are permitted unless explicitly reviewed. Deployment must use reproducible builds and automated CI/CD pipelines.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow & Quality Gates
+
+All work is tracked via feature branches and pull requests. Every PR must pass all tests, code quality checks, and receive at least one approval. Releases require a full regression test and performance validation. Task breakdowns must map to user stories and principles above.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other project practices. Amendments require documentation, team approval, and a migration plan. All PRs and reviews must verify compliance with these principles. Versioning follows semantic rules: MAJOR for breaking changes, MINOR for new principles, PATCH for clarifications. Compliance is reviewed quarterly.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+**Version**: 1.0.0 | **Ratified**: 2025-12-29 | **Last Amended**: 2025-12-29
+
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
